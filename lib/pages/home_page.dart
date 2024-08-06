@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   late double _deviceHeight, _deviceWidth;
 
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class HomePage extends StatelessWidget {
   Widget _top() {
     return AppBar(
       shadowColor: Colors.green,
-      title: Text("#GoMoon"),
+      title: const Text("#GoMoon"),
       backgroundColor: Colors.transparent,
       centerTitle: true,
     );
@@ -42,18 +41,18 @@ class HomePage extends StatelessWidget {
 
   Widget _DropdownButton() {
     return DropdownButton(
-      items: [
+      items: const [
         DropdownMenuItem(
-          child: Text(" Indian SS"),
           value: 1,
+          child: Text(" Indian SS"),
         ),
         DropdownMenuItem(
-          child: Text("American SS"),
           value: 2,
+          child: Text("American SS"),
         ),
         DropdownMenuItem(
-          child: Text("Chandrayaan"),
           value: 3,
+          child: Text("Chandrayaan"),
         ),
       ],
       onChanged: (value) {

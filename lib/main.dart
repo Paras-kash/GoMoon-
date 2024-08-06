@@ -8,7 +8,7 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Go Moon',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),
+        scaffoldBackgroundColor: const Color.fromRGBO(31, 31, 31, 1.0),
       ),
       home: HomePage(),
     );
