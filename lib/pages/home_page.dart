@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   late double _deviceHeight, _deviceWidth;
 
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+          padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.08),
           width: _deviceWidth,
           height: _deviceHeight,
           child: Column(
@@ -31,33 +32,39 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _top() {
-    return AppBar(
-      shadowColor: Colors.green,
-      title: const Text("#GoMoon"),
-      backgroundColor: Colors.transparent,
-      centerTitle: true,
-    );
+    return Text("#GoMoon", style: TextStyle(fontSize: 70, color: Colors.grey));
   }
 
   Widget _DropdownButton() {
-    return DropdownButton(
-      items: const [
-        DropdownMenuItem(
-          value: 1,
-          child: Text(" Indian SS"),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text("American SS"),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text("Chandrayaan"),
-        ),
-      ],
-      onChanged: (value) {
-        print(value);
-      },
+    return Container(
+      decoration: BoxDecoration(
+          color: Color.fromRGBO(53, 53, 53, 1.0),
+          borderRadius: BorderRadius.circular(10)),
+      width: _deviceWidth,
+      padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+      child: DropdownButton(
+        underline: Container(),
+        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
+        style: const TextStyle(color: Colors.white),
+        value: 1,
+        items: const [
+          DropdownMenuItem(
+            value: 1,
+            child: Text(" Indian SS"),
+          ),
+          DropdownMenuItem(
+            value: 2,
+            child: Text("American SS"),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text("Chandrayaan"),
+          ),
+        ].map((e) => e).toList(),
+        onChanged: (value) {
+          print(value);
+        },
+      ),
     );
   }
 }
