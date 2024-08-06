@@ -24,7 +24,6 @@ class HomePage extends StatelessWidget {
             children: [
               _top(),
               _DropdownButton(),
-              _homescreen(),
             ],
           ),
         ),
