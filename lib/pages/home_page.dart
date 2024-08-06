@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _top(),
-              Center(child: _Dropdownmenu()),
+              _DropdownButton(),
             ],
           ),
         ),
@@ -40,16 +40,25 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _Dropdownmenu() {
-    // Implement your Dropdown menu widget here
-    return DropdownButton<String>(
-      items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4'].map((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-      onChanged: (_) {},
+  Widget _DropdownButton() {
+    return DropdownButton(
+      items: [
+        DropdownMenuItem(
+          child: Text(" Indian SS"),
+          value: 1,
+        ),
+        DropdownMenuItem(
+          child: Text("American SS"),
+          value: 2,
+        ),
+        DropdownMenuItem(
+          child: Text("Chandrayaan"),
+          value: 3,
+        ),
+      ],
+      onChanged: (value) {
+        print(value);
+      },
     );
   }
 }
