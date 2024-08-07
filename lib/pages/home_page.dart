@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
             children: [
               _top(),
               _DropdownButton(),
+              _numberofpassenger(),
             ],
           ),
         ),
@@ -59,6 +60,42 @@ class HomePage extends StatelessWidget {
           DropdownMenuItem(
             value: 3,
             child: Text("Chandrayaan"),
+          ),
+        ].map((e) => e).toList(),
+        onChanged: (value) {
+          print(value);
+        },
+      ),
+    );
+  }
+
+  Widget _numberofpassenger() {
+    return Container(
+      width: _deviceWidth * 0.45,
+      decoration: BoxDecoration(
+          color: Color.fromRGBO(53, 53, 53, 1.0),
+          borderRadius: BorderRadius.circular(10)),
+      child: DropdownButton(
+        underline: Container(),
+        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
+        style: const TextStyle(color: Colors.white),
+        value: 1,
+        items: const [
+          DropdownMenuItem(
+            value: 1,
+            child: Text(" 1"),
+          ),
+          DropdownMenuItem(
+            value: 2,
+            child: Text("2"),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text("3"),
+          ),
+          DropdownMenuItem(
+            value: 4,
+            child: Text("4"),
           ),
         ].map((e) => e).toList(),
         onChanged: (value) {
