@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomDropdownButton extends StatelessWidget {
-  List<String> values;
-  double deviceWidth;
-  CustomDropdownButton({required this.values, required this.deviceWidth});
+  final List<String> values;
+  final double deviceWidth;
+
+  CustomDropdownButton({
+    required this.values,
+    required this.deviceWidth,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +24,10 @@ class CustomDropdownButton extends StatelessWidget {
         dropdownColor: Color.fromRGBO(53, 53, 53, 1.0),
         style: TextStyle(color: Colors.white),
         items: values.map((e) {
-          return DropdownMenuItem(child: Text(e), value: e);
+          return DropdownMenuItem(
+            child: Text(e),
+            value: e,
+          );
         }).toList(),
         onChanged: (value) {
           print("This is the value $value");
