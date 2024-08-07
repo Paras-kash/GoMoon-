@@ -21,7 +21,9 @@ class CustomDropdownButton extends StatelessWidget {
         items: values.map((e) {
           return DropdownMenuItem(child: Text(e), value: e);
         }).toList(),
-        onChanged: (_) {},
+        onChanged: (value) {
+          print("This is the value $value");
+        },
       ),
     );
   }
