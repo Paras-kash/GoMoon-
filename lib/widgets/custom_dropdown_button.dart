@@ -21,8 +21,8 @@ class CustomDropdownButton extends StatelessWidget {
         alignment: Alignment.center,
         underline: Container(),
         value: values.first,
-        dropdownColor: Color.fromRGBO(53, 53, 53, 1.0),
         style: TextStyle(color: Colors.white),
+        dropdownColor: Color.fromRGBO(53, 53, 53, 1.0),
         items: values.map((e) {
           return DropdownMenuItem(
             child: Text(e),
@@ -30,7 +30,7 @@ class CustomDropdownButton extends StatelessWidget {
           );
         }).toList(),
         onChanged: (value) {
-          print("The Value is  $value");
+          print("The Value is $value");
         },
       ),
     );

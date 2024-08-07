@@ -99,7 +99,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _top() {
-    return Text("#GoMoon", style: TextStyle(fontSize: 70, color: Colors.grey));
+    return Text("#GoMoon", style: TextStyle(fontSize: 65, color: Colors.grey));
   }
 
   Widget _homescreen() {
