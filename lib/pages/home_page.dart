@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_moon/widgets/custom_dropdown_button.dart';
@@ -25,8 +26,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _top(),
-              _dropdownbutton(),
-              _numberoftravellers(),
+              _Bookaride(),
             ],
           ),
         ),
@@ -45,8 +45,25 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget _Bookaride() {
+    return Container(
+      height: _deviceHeight * 0.25,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _dropdownbutton(),
+          _numberoftravellers(),
+        ],
+      ),
+    );
+  }
+
   Widget _numberoftravellers() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
       children: [
         CustomDropdownButton(
           values: const [
@@ -61,7 +78,16 @@ class HomePage extends StatelessWidget {
             "9",
             "10",
           ],
-          deviceWidth: _deviceWidth * 0.45,
+          deviceWidth: _deviceWidth * 0.39,
+        ),
+        CustomDropdownButton(
+          values: const [
+            "Economy",
+            "Business",
+            "First Class",
+            "Premium Economy",
+          ],
+          deviceWidth: _deviceWidth * 0.39,
         ),
       ],
     );
