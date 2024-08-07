@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_moon/widgets/custom_dropdown_button.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
@@ -24,6 +26,7 @@ class HomePage extends StatelessWidget {
             children: [
               _top(),
               _dropdownbutton(),
+              _numberoftravellers(),
             ],
           ),
         ),
@@ -32,28 +35,35 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _dropdownbutton() {
-    List<String> _items = [
-      "Indain Space Center",
-      "Australian Space Center",
-      "Russian Space Center",
-    ];
-    return Container(
-      width: _deviceWidth,
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(53, 53, 53, 1.0),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: DropdownButton(
-        alignment: Alignment.center,
-        underline: Container(),
-        value: _items.first,
-        dropdownColor: Color.fromRGBO(53, 53, 53, 1.0),
-        style: TextStyle(color: Colors.white),
-        items: _items.map((e) {
-          return DropdownMenuItem(child: Text(e), value: e);
-        }).toList(),
-        onChanged: (_) {},
-      ),
+    return CustomDropdownButton(
+      values: const [
+        "Indain Space Center",
+        "Australian Space Center",
+        "Russian Space Center",
+      ],
+      deviceWidth: _deviceHeight,
+    );
+  }
+
+  Widget _numberoftravellers() {
+    return Row(
+      children: [
+        CustomDropdownButton(
+          values: const [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+          ],
+          deviceWidth: _deviceWidth * 0.45,
+        ),
+      ],
     );
   }
 
