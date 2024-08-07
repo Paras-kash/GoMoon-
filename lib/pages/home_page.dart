@@ -17,19 +17,23 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.08),
-          width: _deviceWidth,
-          height: _deviceHeight,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _top(),
-              _Bookaride(),
-            ],
-          ),
-        ),
+            padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.08),
+            width: _deviceWidth,
+            height: _deviceHeight,
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _top(),
+                    _Bookaride(),
+                  ],
+                ),
+                Align(child: _homescreen(), alignment: Alignment.centerRight),
+              ],
+            )),
       ),
     );
   }
@@ -55,6 +59,7 @@ class HomePage extends StatelessWidget {
         children: [
           _dropdownbutton(),
           _numberoftravellers(),
+          _ridebutton(),
         ],
       ),
     );
@@ -99,10 +104,29 @@ class HomePage extends StatelessWidget {
 
   Widget _homescreen() {
     return Container(
+      height: _deviceHeight * 0.60,
+      width: _deviceWidth * 0.65,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.contain,
           image: AssetImage("assets/images/astro_moon.png"),
+        ),
+      ),
+    );
+  }
+
+  Widget _ridebutton() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      width: _deviceWidth,
+      child: MaterialButton(
+        onPressed: () {},
+        child: const Text(
+          "Book A Ride ",
+          style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
         ),
       ),
     );
