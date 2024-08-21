@@ -79,7 +79,8 @@ class HomePage extends StatelessWidget {
             "7",
             "8",
             "9",
-            "10",
+            "10"
+                "11",
           ],
           deviceWidth: _deviceWidth * 0.39,
         ),
