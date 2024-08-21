@@ -88,6 +88,7 @@ class HomePage extends StatelessWidget {
         CustomDropdownButton(
           values: const [
             "Economy",
+            "Second Class",
             "Business",
             "First Class",
             "Premium Economy",
